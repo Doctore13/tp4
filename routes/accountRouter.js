@@ -212,6 +212,22 @@ app.patch('/account/:id', async (req, res) => {
   }
 });
 
+app.put('/account/:id', async (req, res) => {
+  try {
+    const id = req.params.id;
+    const account = await accountModel.findByIdAndUpdate(
+      { _id: id },
+      req.body,
+      {
+        new: true,
+      }
+    );
+    res.send(account);
+  } catch (error) {
+    res.status(500).send(error);
+  }
+});
+
 //DELETE
 app.delete('/account/:id', async (req, res) => {
   try {
