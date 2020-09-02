@@ -9,7 +9,11 @@ const app = express();
 (async () => {
   try {
     await mongoose.connect(
-      'mongodb+srv://doctore:5803@bootcamp.msaxk.mongodb.net/Accounts?retryWrites=true&w=majority',
+      'mongodb+srv://' +
+        process.env.user +
+        ':' +
+        process.env.password +
+        '@bootcamp.msaxk.mongodb.net/Accounts?retryWrites=true&w=majority',
       {
         useNewUrlParser: true,
         useUnifiedTopology: true,
