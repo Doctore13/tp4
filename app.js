@@ -19,6 +19,7 @@ const app = express();
         useUnifiedTopology: true,
       }
     );
+    //comment
     console.log('Conectado no MongoDB');
   } catch (error) {
     console.log('Erro ao conectar no MongoDB');
